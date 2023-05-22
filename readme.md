@@ -1,1 +1,0 @@
-OBIS observer configurator
