@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Obis observer configurator version</title>
+    </head>
+    <body>
+        <script>
+            fetch('tree.json').then(async response => {
+                const tree = await response.json();
+                const {contents} = tree[0];
+                const $list = document.getElementById('versions');
+
+                contents.forEach(version => {
+                    if ( version.type !== 'directory' ) {
+                        return;
+                    }
+
+                    const $listItem = document.createElement('li');
+                    const $link = document.createElement('a');
+
+                    $link.href = `/versions/${version.name}/index.html`;
+                    $link.textContent = version.name;
+                    $listItem.append($link);
+                    $list.append($listItem);
+                });
+            });
+        </script>
+        <h1>Version list</h1>
+        <ul id="versions"></ul>
+    </body>
+</html>
