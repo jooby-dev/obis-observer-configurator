@@ -1,8 +1,7 @@
-[
-  {"type":"directory","name":".","contents":[
-    {"type":"directory","name":"1.0.0"},
+[{"type":"directory","name": ".","contents":[
+    {"type":"directory","name":"1.0.0","contents":[
+    ]},
     {"type":"file","name":"index.html"},
     {"type":"file","name":"tree.json"}
   ]}
-
 ]
